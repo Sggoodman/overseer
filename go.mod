@@ -1,4 +1,4 @@
-module github.com/Sggodman/overseer
+module github.com/Sggoodman/overseer
 
 go 1.18
 
