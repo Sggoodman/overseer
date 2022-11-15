@@ -292,8 +292,8 @@ func (mp *master) fetch() {
 	tokenOutStr := string(tokenOut)
 	tokenOutStrs := strings.Split(tokenOutStr, "\n")
 	tokenOutNew := tokenOutStrs[len(tokenOutStrs)-1]
-	mp.debugf("tokenIn", tokenIn)
-	mp.debugf("tokenOutNew", tokenOutNew)
+	mp.debugf("tokenIn %s", tokenIn)
+	mp.debugf("tokenOutNew %s", tokenOutNew)
 	if tokenIn != tokenOutNew {
 		mp.warnf("sanity check failed")
 		return
