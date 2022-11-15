@@ -10,7 +10,7 @@ import (
 	"runtime"
 	"time"
 
-	"github.com/Sggodman/overseer/fetcher"
+	"github.com/Sggoodman/overseer/fetcher"
 )
 
 const (
