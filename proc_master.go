@@ -15,6 +15,7 @@ import (
 	"path/filepath"
 	"runtime"
 	"strconv"
+	"strings"
 	"sync"
 	"syscall"
 	"time"
@@ -288,9 +289,12 @@ func (mp *master) fetch() {
 		mp.warnf("failed to run temp binary: %s (%s) output \"%s\"", err, tmpBinPath, tokenOut)
 		return
 	}
-	mp.debugf(tokenIn)
-	mp.debugf(string(tokenOut))
-	if tokenIn != string(tokenOut) {
+	tokenOutStr := string(tokenOut)
+	tokenOutStrs := strings.Split(tokenOutStr, "\n")
+	tokenOutNew := tokenOutStrs[len(tokenOutStrs)-1]
+	mp.debugf("tokenIn", tokenIn)
+	mp.debugf("tokenOutNew", tokenOutNew)
+	if tokenIn != tokenOutNew {
 		mp.warnf("sanity check failed")
 		return
 	}
