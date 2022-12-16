@@ -133,7 +133,7 @@ func (mp *master) handleSignal(s os.Signal) {
 	//while the slave process is running, proxy
 	//all signals through
 	if mp.slaveCmd != nil && mp.slaveCmd.Process != nil {
-		mp.debugf("proxy signal (%s)", s)
+		// mp.debugf("proxy signal (%s)", s)
 		mp.sendSignal(s)
 	} else
 	//otherwise if not running, kill on CTRL+c
